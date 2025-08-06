@@ -4,7 +4,7 @@ import SkillCard from '../helper/SkillCart';
 
 const Skils = () => {
   return (
-    <div id="skills" className='pt-[80px] pb-[50px] bg-black'>
+    <div id="skils" className='pt-[80px] pb-[50px] bg-black'>
       <div className='grid w-[80%] mx-auto grid-cols-1 lg:grid-cols-7 gap-[30px] items-center'>
         <div className='col-span-3'>
           <p className='heading_mini'>My Skills</p>

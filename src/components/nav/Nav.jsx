@@ -17,6 +17,15 @@ const Nav = () => {
         })
     },[])
     const stickyStyle = navSticky ? "bg-[#212428] shadow-gray-900 shadow-sm" : ""
+    const navigateFunc = (section) => {
+        const element = document.getElementById(section)
+        if(element){
+            window.scrollTo({
+            top:element.offsetTop,
+            behavior:"smooth"
+            })
+        }
+    }
   return (
     <div className={`${stickyStyle} fixed w-[100%] z-[1000] transition-all duration-300`}>
         <div className='flex w-[80%] items-center justify-between h-[80px] mx-auto'>
@@ -25,19 +34,19 @@ const Nav = () => {
                 Sahakyan
             </div>
             <ul className='lg:flex md:flex  hidden items-center space-x-10 sm:none'>
-                <li>
+                <li onClick={() => navigateFunc('home')}>
                     <a className='nav_link cursor-pointer lg:text-xl md:text-[15px]'>Home</a>
                 </li>
-                 <li>
+                 <li onClick={() => navigateFunc('about')}>
                     <a className='nav_link cursor-pointer lg:text-xl md:text-[15px]'>About</a>
                 </li>
-                 <li>
+                 <li onClick={() => navigateFunc('services')}>
                     <a className='nav_link cursor-pointer lg:text-xl md:text-[15px]'>Services</a>
                 </li>
-                 <li>
-                    <a className='nav_link cursor-pointer lg:text-xl md:text-[15px]'>Projects</a>
+                 <li onClick={() => navigateFunc('price_list')}>
+                    <a className='nav_link cursor-pointer lg:text-xl md:text-[15px]'>Price List</a>
                 </li>
-                 <li>
+                 <li onClick={() => navigateFunc('contact')}>
                     <a className='nav_link cursor-pointer lg:text-xl md:text-[15px]'>Contact</a>
                 </li>
             </ul>
